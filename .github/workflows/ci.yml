@@ -19,21 +19,32 @@ jobs:
       with:
         python-version: '3.x'
 
-    # --- Tests HashMap ---
-    - name: Executer le test Python HashMap
-      run: python 09_HashMap/python/hashmap.py
+    - name: Configurer Java (JDK 17)
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
 
-    - name: Compiler et Executer le test HashMap en C
+    
+    - name: Executer les tests HashMap
       run: |
-        gcc 09_HashMap/C/hashmap.c -o hashmap_test
-        ./hashmap_test
+        python 09_HashMap/python/hashmap.py
+        gcc 09_HashMap/c/hashmap.c -o hashmap_test && ./hashmap_test
 
-    # --- Tests Stack ---
-    - name: Executer le test Python Stack
-      run: python 05_Stack/python/stack.py
-
-    - name: Compiler et Executer le test Stack en C
+    - name: Executer les tests Stack
       run: |
-        gcc 05_Stack/C/stack.c -o stack_test
-        ./stack_test
+        python 05_Stack/python/stack.py
+        gcc 05_Stack/c/stack.c -o stack_test && ./stack_test
+
+    
+    - name: Executer le test Python Linked List
+      run: python 07_LinkedList/python/linked_list.py
+
+    - name: Compiler et Executer C Linked List
+      run: gcc 07_LinkedList/c/linked_list.c -o ll_c && ./ll_c
+
+    - name: Compiler et Executer Java Linked List
+      run: |
+        javac 07_LinkedList/java/LinkedListTest.java
+        java -ea -cp 07_LinkedList/java LinkedListTest
 
