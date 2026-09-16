@@ -1,0 +1,39 @@
+name: Validation des Structures de Donnees
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-structures:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Recuperer le code du depot
+      uses: actions/checkout@v4
+
+    - name: Configurer Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    # --- Tests HashMap ---
+    - name: Executer le test Python HashMap
+      run: python 09_HashMap/python/hashmap.py
+
+    - name: Compiler et Executer le test HashMap en C
+      run: |
+        gcc 09_HashMap/C/hashmap.c -o hashmap_test
+        ./hashmap_test
+
+    # --- Tests Stack ---
+    - name: Executer le test Python Stack
+      run: python 05_Stack/python/stack.py
+
+    - name: Compiler et Executer le test Stack en C
+      run: |
+        gcc 05_Stack/C/stack.c -o stack_test
+        ./stack_test
+

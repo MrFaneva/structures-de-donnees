@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <assert.h>
 
 #define SIZE 10
 
@@ -31,7 +32,8 @@ char* get(char* key) {
 
 int main() {
     put("K1", "V1");
-    printf("Cle K1 : %s\n", get("K1"));
+    assert(strcmp(get("K1"), "V1") == 0);
+    printf("Test C HashMap réussi !\n");
     return 0;
 }
 

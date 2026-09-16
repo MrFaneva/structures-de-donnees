@@ -25,4 +25,11 @@ python python/hashmap.py
 gcc c/hashmap.c -o hashmap_c
 ./hashmap_c
 ```
+# Structures de Données
+
+Mon portfolio d'apprentissage des structures de données en Python et Langage C.
+
+## 🛠️ Suivi des structures
+* 📦 **05. Stack** (Python & C)
+* 🔑 **09. HashMap** (Python & C)
 

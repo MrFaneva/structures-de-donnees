@@ -21,9 +21,9 @@ class SimpleHashMap:
                 return item[1]
         return None
 
-# Test rapide
 if __name__ == "__main__":
     mp = SimpleHashMap()
     mp.put("K1", "V1")
-    print(f"Clé K1 : {mp.get('K1')}")
+    assert mp.get("K1") == "V1", "Erreur : K1 devrait valoir V1"
+    print("Test Python HashMap réussi !")
 
