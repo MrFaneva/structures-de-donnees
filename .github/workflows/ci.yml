@@ -25,18 +25,19 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    
+    # --- 1. Tests HashMap ---
     - name: Executer les tests HashMap
       run: |
         python 09_HashMap/python/hashmap.py
         gcc 09_HashMap/c/hashmap.c -o hashmap_test && ./hashmap_test
 
+    # --- 2. Tests Stack ---
     - name: Executer les tests Stack
       run: |
         python 05_Stack/python/stack.py
         gcc 05_Stack/c/stack.c -o stack_test && ./stack_test
 
-    
+    # --- 3. Tests Linked List ---
     - name: Executer le test Python Linked List
       run: python 07_LinkedList/python/linked_list.py
 
