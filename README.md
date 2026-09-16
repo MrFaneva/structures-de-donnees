@@ -1,3 +1,6 @@
+![Validation des Structures de Donnees](https://github.com/MrFaneva/structures-de-donnees/)
+
+
 # 09. HashMap (Table de Hachage)
 
 Cette section présente une implémentation personnalisée d'une **HashMap** sans utiliser les structures natives des langages, afin de démontrer les mécanismes internes de hachage.
