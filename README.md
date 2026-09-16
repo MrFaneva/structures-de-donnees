@@ -1,4 +1,4 @@
-![Validation des Structures de Donnees](https://github.com/MrFaneva/structures-de-donnees/)
+![Validation des Structures de Donnees](https://github.com/MrFaneva/structures-de-donnees/actions/workflows/ci.yml/badge.svg)
 
 
 # 09. HashMap (Table de Hachage)
