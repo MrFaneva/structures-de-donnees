@@ -1,61 +1,42 @@
-![Validation des Structures de Donnees](https://github.com/MrFaneva/structures-de-donnees/actions/workflows/ci.yml/badge.svg)
+![Validation des Structures de Donnees](https://github.com)
 
-
-# 09. HashMap (Table de Hachage)
-
-Cette section présente une implémentation personnalisée d'une **HashMap** sans utiliser les structures natives des langages, afin de démontrer les mécanismes internes de hachage.
-
-## 🎯 Concepts Clés
-* **Fonction de Hachage** : Transforme une clé en un index numérique.
-* **Complexité Temporelle** : 
-  * Recherche / Insertion : **O(1)** en moyenne.
-  * Pire des cas : **O(n)** si toutes les clés entrent en collision.
-* **Gestion des Collisions** : Implémentée via chaînage (Python) et adressage direct simplifié (C).
-
-## 💻 Langages Utilisés
-* **Python** : Approche Orientée Objet (POO) avec listes dynamiques.
-* **Langage C** : Allocation statique et manipulation directe des chaînes de caractères.
-
-## 🚀 Exécution des tests
-
-### Python
-```bash
-python python/hashmap.py
-```
-
-### Langage C
-```bash
-gcc c/hashmap.c -o hashmap_c
-./hashmap_c
-```
 # Structures de Données
 
-Mon portfolio d'apprentissage des structures de données en Python et Langage C.
+Mon portfolio technique d'apprentissage des structures de données fondamentales implémentées en **Python**, **Langage C** et **Java**. 
 
-## 🛠️ Suivi des structures
-* 📦 **05. Stack** (Python & C)
-* 🔑 **09. HashMap** (Python & C)
+L'intégralité du projet intègre un cycle d'intégration continue (**CI/CD via GitHub Actions**) et une orchestration centralisée par **Makefile** pour automatiser la compilation et la validation des algorithmes.
 
-# 07. Linked List (Liste chaînée simple)
+## 🛠️ État d'avancement du Portfolio
 
-Une **Linked List** est une structure de données linéaire où les éléments ne sont pas stockés à des emplacements mémoire contigus. Chaque élément (nœud) contient un pointeur/référence vers le nœud suivant.
+* 📦 **05. Stack (Pile)** — Implémentation linéaire LIFO (Python, C).
+* 🔗 **07. Linked List (Liste chaînée)** — Gestion des nœuds et des références dynamiques (Python, C, Java).
+* 🔑 **09. HashMap (Table de Hachage)** — Gestion personnalisée des fonctions de hachage et des collisions (Python, C).
+* 📐 **11. Heap (Tas / Max-Heap)** — Représentation optimisée d'un arbre binaire complet sous forme de tableau (Python, C, Java).
 
-## 🎯 Complexité Temporelle
-* Insertion en fin : **O(n)** (ou O(1) si on garde une référence sur la queue)
-* Recherche / Accès direct : **O(n)**
+---
 
-## 🚀 Exécution locale
+## 🚀 Orchestration & Exécution locale
 
+Le projet utilise un **Makefile** pour standardiser et automatiser l'exécution des batteries de tests. Vous n'avez besoin d'aucune commande complexe.
+
+### 1. Lancer l'intégralité des tests (Multi-langages)
+Cette commande exécute automatiquement tous les fichiers Python, compile et lance les exécutables C, compile et exécute les classes de tests unitaires Java avec assertions activées (`-ea`), puis nettoie proprement les résidus de compilation.
 ```bash
-# Python
-python python/linked_list.py
-
-# C
-gcc c/linked_list.c -o ll_c && ./ll_c
-
-# Java
-javac java/LinkedListTest.java && java -ea -cp java LinkedListTest
+make test
 ```
-* 📐 **11. Heap (Max-Heap)** — Implémentation sous forme de tableau en Python, C et Java.
 
+### 2. Lancer le test d'une structure spécifique
+Si vous souhaitez isoler le test d'une structure en particulier pendant votre développement :
+```bash
+make test-hashmap
+make test-stack
+make test-linkedlist
+make test-heap
+```
+
+### 3. Nettoyer les fichiers binaires temporaires
+Pour supprimer manuellement les fichiers exécutables et les fichiers `.class` résiduels :
+```bash
+make clean
+```
 
