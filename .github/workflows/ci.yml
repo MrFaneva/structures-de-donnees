@@ -25,27 +25,7 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    # --- 1. Tests HashMap ---
-    - name: Executer les tests HashMap
-      run: |
-        python 09_HashMap/python/hashmap.py
-        gcc 09_HashMap/c/hashmap.c -o hashmap_test && ./hashmap_test
-
-    # --- 2. Tests Stack ---
-    - name: Executer les tests Stack
-      run: |
-        python 05_Stack/python/stack.py
-        gcc 05_Stack/c/stack.c -o stack_test && ./stack_test
-
-    # --- 3. Tests Linked List ---
-    - name: Executer le test Python Linked List
-      run: python 07_LinkedList/python/linked_list.py
-
-    - name: Compiler et Executer C Linked List
-      run: gcc 07_LinkedList/c/linked_list.c -o ll_c && ./ll_c
-
-    - name: Compiler et Executer Java Linked List
-      run: |
-        javac 07_LinkedList/java/LinkedListTest.java
-        java -ea -cp 07_LinkedList/java LinkedListTest
+    # Le Makefile s'occupe de tout en une seule ligne !
+    - name: Executer l'ensemble des tests via le Makefile
+      run: make test
 

@@ -56,5 +56,6 @@ gcc c/linked_list.c -o ll_c && ./ll_c
 # Java
 javac java/LinkedListTest.java && java -ea -cp java LinkedListTest
 ```
+* 📐 **11. Heap (Max-Heap)** — Implémentation sous forme de tableau en Python, C et Java.
 
 
