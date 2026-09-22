@@ -25,7 +25,7 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    # Le Makefile s'occupe de tout en une seule ligne !
+    
     - name: Executer l'ensemble des tests via le Makefile
       run: make test
 
